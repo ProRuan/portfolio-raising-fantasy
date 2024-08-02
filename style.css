@@ -1,0 +1,511 @@
+/* global html */
+.dialog {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: unset;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+
+.dialog[open] {
+    display: flex;
+}
+
+
+.dialog-box {
+    box-sizing: border-box;
+    padding: 24px;
+    width: 75%;
+    min-width: 320px;
+    max-width: 688px;
+    height: 75%;
+    min-height: 320px;
+    max-height: 768px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: white;
+    border-radius: 12px;
+    position: relative;
+    overflow-y: scroll;
+}
+
+
+.close-btn {
+    box-sizing: border-box;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    background-image: url('./img/start_screen/x_button.png');
+    border: unset;
+    border-radius: 50%;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+}
+
+
+.close-btn:hover {
+    box-shadow: 0 0 8px 2px steelblue;
+}
+
+
+.body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('./img/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+
+.header {
+    box-sizing: border-box;
+    padding: 24px 32px;
+    width: 100%;
+    height: 72px;
+    font-family: 'Trade Winds', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 4px white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.display-none {
+    display: none !important;
+}
+
+
+.btn {
+    box-sizing: border-box;
+    padding: 4px;
+    width: 48px;
+    height: 48px;
+    font-family: 'Amaranth', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    color: #382914;
+    background-image: url('./img/header/ball3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 4px white;
+    cursor: pointer;
+}
+
+
+.btn:hover {
+    box-shadow: 0 0 8px 2px goldenrod;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+.main {
+    width: 100%;
+    height: calc(100vh - 144px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#canvas {
+    height: calc(100vh - 144px);
+    max-height: 768px;
+    display: block;
+    background-color: black;
+    box-shadow: 0 0 16px 16px white;
+}
+
+
+#rotation-img {
+    padding: 32px;
+    width: 50%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10%;
+}
+
+
+.footer {
+    box-sizing: border-box;
+    padding: 24px 32px;
+    width: 100%;
+    height: 72px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 -4px 4px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 96px;
+}
+
+
+.link {
+    cursor: pointer;
+}
+
+
+.link-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.link-btn:hover {
+    color: #382914;
+    text-decoration: none;
+    box-shadow: 0 0 8px 2px goldenrod;
+}
+
+
+.link-btn-text {
+    padding-top: 5px;
+}
+
+
+.mobile-btn {
+    display: none;
+}
+
+
+/* link html */
+.link-main {
+    box-sizing: border-box;
+    padding: 24px 24px 12px 24px;
+    width: 100%;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+
+.link-section {
+    width: 100%;
+    max-width: 640px;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    width: 100%;
+    max-width: 640px;
+}
+
+
+h1 {
+    margin: 24px 0;
+    font-size: 32px;
+}
+
+
+h2 {
+    margin: 16px 0;
+    font-size: 24px;
+}
+
+
+h3 {
+    margin: 16px 0;
+    font-size: 20px;
+}
+
+
+h4 {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+
+p {
+    margin: 0 0 32px 0;
+    width: 100%;
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+a:hover {
+    text-decoration: underline;
+    color: steelblue;
+}
+
+
+ul {
+    box-sizing: border-box;
+    margin: 0 0 32px 0;
+    width: 100%;
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+}
+
+
+li {
+    margin: 0 0 8px 0;
+}
+
+
+/* imprint.html */
+.assets-board {
+    margin: 0 0 32px 0;
+    max-width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.assets-article {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 16px;
+    width: fit-content;
+    height: fit-content;
+    border: 3px solid steelblue;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.assets-h3 {
+    margin: 16px 0 8px 0;
+    text-align: center;
+}
+
+
+.assets-p {
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+
+
+/* game-manual.html */
+.p-single {
+    margin-bottom: 8px;
+}
+
+
+.mobile-control {
+    display: none;
+}
+
+
+.table-cont {
+    display: flex;
+    justify-content: center;
+}
+
+
+table {
+    margin: 0 0 32px 0;
+    width: 100%;
+    max-width: 640px;
+    font-size: 15px;
+    line-height: 20px;
+    border-spacing: 0;
+}
+
+
+thead {
+    font-weight: bold;
+    background-color: rgba(70, 130, 180, 0.3);
+}
+
+
+th {
+    box-sizing: border-box;
+    padding: 4px 8px;
+    text-align: left;
+}
+
+
+td {
+    box-sizing: border-box;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+
+thead th,
+thead td {
+    border-bottom: 1px solid steelblue;
+}
+
+
+tr:nth-child(2n) {
+    background-color: rgba(70, 130, 180, 0.1);
+}
+
+
+.touch-figure {
+    margin-bottom: 32px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.touch-screen {
+    width: fit-content;
+    border: 3px solid steelblue;
+    border-radius: 12px;
+    display: flex;
+}
+
+
+.touch-third {
+    box-sizing: border-box;
+    margin: 4px;
+    width: 160px;
+    height: 270px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.zone-label {
+    margin: 8px;
+    width: calc(120px - 16px);
+    height: calc(60px - 12px);
+    font-weight: bold;
+    color: steelblue;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.control-zone {
+    margin: 8px;
+    width: calc(100% - 16px);
+    height: calc(180px - 24px);
+    background-color: rgba(70, 130, 180, 0.3);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.middle-zone {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.pause-zone {
+    margin: 8px;
+    width: calc(120px - 16px);
+    height: calc(60px - 12px);
+    background-color: rgba(70, 130, 180, 0.3);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.action-zone {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+}
+
+
+.action-subzone {
+    margin: 8px;
+    width: calc(100% - 16px);
+    height: calc(50% - 12px);
+    background-color: rgba(70, 130, 180, 0.3);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#touch-figure-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.touch-figure-mobile {
+    display: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: rgba(70, 130, 180, 0.7);
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(70, 130, 180, 1);
+}
